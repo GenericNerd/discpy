@@ -8,7 +8,7 @@ class GatewayTests(unittest.TestCase):
     def test_payloads(self):
         directPayload = discpy.GatewayPayload(discpy.GatewayOpCode(10), 1)
         jsonPayload = "{\"op\": 10, \"s\": 1, \"t\": null, \"d\": null}"
-        jsonedPayload = discpy.GatewayPayload.fromJSON(self.jsonPayload)
+        jsonedPayload = discpy.GatewayPayload.fromJSON(jsonPayload)
 
         self.assertEqual(directPayload, jsonedPayload)
         self.assertEqual(directPayload.toJSON(), jsonedPayload.toJSON())
