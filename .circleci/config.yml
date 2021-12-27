@@ -1,0 +1,18 @@
+version: 2.1
+orbs:
+  python: cicleci/python@1.2
+jobs:
+  install-and-test:
+    docker:
+      - image: cimg/python:3.10.1
+    steps:
+      - checkout
+      - install-packages:
+        pkg-manager: pip
+      - test:
+        name: Run tests
+        command: python3.10 tests.py
+workflows:
+  test:
+    jobs:
+      - install-and-test
