@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  python: cicleci/python@1.2
+  python: circleci/python@1.5.0
 jobs:
   install-and-test:
     docker:
